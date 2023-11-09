@@ -1,4 +1,6 @@
-FROM tomcat:9.0.58-jdk17-openjdk-slim
-ADD target/demo-0.1.war /usr/local/tomcat/webapps/
+FROM openjdk:17
+VOLUME /tmp
 EXPOSE 8080
-CMD ["catalina.sh", "run"]
+ARG JAR_FILE=target/demo-0.2.jar
+ADD ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
