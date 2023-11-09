@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class Controller {
     @GetMapping("/status")
     public List<CpuRecord> status() {
         List<CpuRecord> cpuRecords = service.listRecord();
+        cpuRecords.add(new CpuRecord(1234, LocalDateTime.now(),123.0f));
 
         return cpuRecords;
     }

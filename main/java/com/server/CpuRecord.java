@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 @Entity(name = "cpu")
 public class CpuRecord {
     @Id
+    @GeneratedValue
     private Integer id;
     @Column(name = "time")
     private LocalDateTime time;
