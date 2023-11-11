@@ -1,1 +1,0 @@
-python3 speed_test.py http://test.com/send /home/admin/speed_service/error

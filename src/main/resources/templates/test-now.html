@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <div th:replace="~{fragments/head :: css}"></div>
+    <link href="/css/test-now-style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div th:replace="~{fragments/topnav :: navbar}"></div>
+
+<div class="main-container">
+    <div class="title-container">
+        <img src="/speed.png"/>
+        <span class="title-text">Speed test</span>
+    </div>
+    <div>
+        <h3>Ping: <span th:text="${result.ping} ?: '--'"></span> ms</h3>
+        <h3>Download: <span th:text="${result.download} ?: '--'"></span> MB/s</h3>
+        <h3>Upload: <span th:text="${result.upload} ?: '--'"></span> MB/s</h3>
+    </div>
+    <form action="/speed/test-now-send" method="post">
+    <input type="submit" class=" test-btn btn btn-success" onclick="showLoader()" value="Realizar test"/>
+    </form>
+
+    <div id="loader-container" class="loading-container"><div></div><div></div><div></div></div>
+</div>
+<script>
+    function showLoader()
+    {
+        document.getElementById('loader-container').style.display= "inline-block";
+    }
+</script>
+</body>
+</html>
