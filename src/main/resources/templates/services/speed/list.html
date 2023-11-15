@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Speed home</title>
+    <div th:replace="~{fragments/head :: css}"></div>
+    <link href="/css/speed-style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div th:replace="~{fragments/topnav :: navbar}"></div>
+<div class="main-container">
+    <section class="left-section">
+        <a type="button" class="btn btn-success" href="/services/speed/test-now">Realizar test</a>
+    </section>
+    <table class="speed-table">
+        <thead>
+        <tr>
+            <th scope="col"><a th:href="'?order-date='+${nextorder.toString()}" th:text="${nextorder.toString()} == 'DESC'? 'Fecha ▲':'Fecha ▼'" th:field="${records}"></a></th>
+            <th scope="col">Ping</th>
+            <th scope="col">Download</th>
+            <th scope="col">Upload</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="record : ${records}">
+            <td th:text="${record.time.getDayOfMonth()}+'-'+${record.time.getMonthValue()}+'-'+${record.time.year}"><span>edfdf</span></td>
+            <td th:text="${record.ping}+' ms'"></td>
+            <td th:text="${record.download}+' MB/s'"></td>
+            <td th:text="${record.upload}+' MB/s'"></td>
+        </tr>
+
+        </tbody>
+        <tfoot>
+        <tr>
+
+        </tr>
+        </tfoot>
+    </table>
+</div>
+</body>
+</html>

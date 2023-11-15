@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>aaa</title>
+</head>
+<body>
+Holaa
+
+<ul>
+    <li th:each="record : ${records}">
+    <span th:text="'Id: '+ ${record.id}"></span>
+    <span th:text="'Time: '+ ${record.time}"></span>
+    <span th:text="'Ping:'+ ${record.ping}+' ms'"></span>
+    <span th:text="'Download:'+ ${record.download}+' MB/s'"></span>
+    <span th:text="'Upload: '+ ${record.upload}+' MB/s'"></span>
+    </li>
+
+</ul>
+</body>
+</html>

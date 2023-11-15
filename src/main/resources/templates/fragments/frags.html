@@ -1,0 +1,17 @@
+
+  <a th:fragment="service-container" class="linker" th:href="${service.url} ?: '#'">
+    <div class="service-container">
+      <span class="service-title" th:text="${service.name}"></span>
+      <div class="image-frame">
+
+        <img class="default-image" th:src="${service.icon} ?: '/default.png'" alt="default image"/>
+      </div>
+      <div class="status-container">
+        <div class="status-page-link">
+          <div class="status-dot"></div>
+        </div>
+        <span class="status-text" th:text="${service.status}? 'Active': 'Stopped'"></span>
+      </div>
+    </div>
+  </a>
+

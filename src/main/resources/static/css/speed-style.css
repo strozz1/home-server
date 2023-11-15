@@ -14,30 +14,23 @@
     table-layout: fixed;
     width: 50%;
     border-collapse: collapse;
-    border: 3px solid #000000;
-    background-color: #394362;
+    border: 1px solid #000000;
 }
 
+
 thead th:nth-child(1) {
-    width: 5%;
+    width: 25%;
 }
 
 thead th:nth-child(2) {
-    width: 19%;
+    width: 25%;
 }
 
 thead th:nth-child(3) {
-    width: 19%;
+    width: 25%;
 }
-
 thead th:nth-child(4) {
-    width: 19%;
-}
-thead th:nth-child(5) {
-    width: 19%;
-}
-thead th:nth-child(6) {
-    width: 19%;
+    width: 25%;
 }
 
 th,
@@ -51,11 +44,19 @@ html {
 }
 
 thead th {
-    font-family: helvetica, cursive;
+
+    font-family: helvetica, Arial, serif;
 }
 
 th {
+
+    text-align: center;
     letter-spacing: 2px;
+}
+th a, th a:hover{
+    text-decoration: none;
+    display: block;
+    color: white;
 }
 
 td {
@@ -65,33 +66,31 @@ td {
 
 tbody td {
     text-align: center;
+    font-weight: normal;
 }
 
 thead,
 tfoot {
-    background: #8787cc;
+    background: #2d2d33;
     color: white;
 }
+thead th{
+    background-color: #1e1e1e;
+    border: 2px solid #000000;
+}
+thead th:hover{
+    background-color: #343434;
 
-thead th,
-tfoot th,
-tfoot td {
-    background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.1),
-            rgba(0, 0, 0, 0.5)
-    );
-    border: 3px solid #000000;
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #8787cc;
+    font-weight: bold;
+    background-color: #015d5d;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #000000;
+
+    background-color: #343434;
 }
 
-tbody tr {
-    background: #000000;
-}
+tbody tr:hover {background-color: #0c8383;}

@@ -19,7 +19,7 @@
         <h3>Download: <span th:text="${result.download} ?: '--'"></span> MB/s</h3>
         <h3>Upload: <span th:text="${result.upload} ?: '--'"></span> MB/s</h3>
     </div>
-    <form action="/speed/test-now-send" method="post">
+    <form action="/services/speed/test-now-send" method="post">
     <input type="submit" class=" test-btn btn btn-success" onclick="showLoader()" value="Realizar test"/>
     </form>
 
